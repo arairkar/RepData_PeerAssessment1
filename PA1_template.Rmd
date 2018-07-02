@@ -18,6 +18,8 @@ Code chunk downloads file, unzips and removes parent zip file and then loads raw
 
 ```{r,echo=TRUE,message=FALSE,warning=FALSE}
 setwd("~/coursera/Rep-rez/")
+knitr::opts_chunk$set(echo = TRUE, results = "asis", fig.path = "instructions_fig/", warning = FALSE, message = FALSE)
+
 
 require(ggplot2)
 require(timeDate)
@@ -49,9 +51,10 @@ names(Stepssumbydate) <- c("Date","Total.steps")
 gr <- ggplot(Stepssumbydate, aes(Total.steps, na.rm = TRUE)) +
         geom_histogram(binwidth = 3600) +
         xlab("Total Steps per day") +
-        ylab("Frequency")
-ggtitle("Histogram of total steps per day")
+        ylab("Frequency") +
+        ggtitle("Histogram of total steps per day")
 gr
+
 ```
 
 Q: Calculate and report the mean and median of the total number of steps taken per day
